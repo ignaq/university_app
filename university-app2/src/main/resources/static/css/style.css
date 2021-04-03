@@ -1,0 +1,25 @@
+body{
+	background: #eeeef7;
+}
+
+nav{
+	background: #0098e0;
+	
+}
+a.nav-link{
+	color: #FFFFFF;
+}
+
+button i{
+	color: white;
+	
+}
+
+
+.btn-outline-light {
+	
+	border-radius: 0;
+
+
+	
+}

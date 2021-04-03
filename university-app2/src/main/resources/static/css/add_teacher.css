@@ -1,0 +1,17 @@
+.card{
+	margin-top: 3em;
+	padding: 2em;
+}
+
+button.btn.btn-primary.btn-lg{
+	display:inline-block;
+	color: white;
+	font-weight: lighter;	
+	font-size: 1.2em;
+	background:#0098e0;
+	border: none;
+	border-radius: 0;
+	margin-top: 1em;
+
+	
+}

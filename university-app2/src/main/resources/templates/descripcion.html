@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:replace="layout/layout :: head">
+<meta charset="UTF-8" />
+
+</head>
+<link th:href="@{/css/descripcion.css}" rel="stylesheet" />
+
+<body>
+
+
+<header th:replace="layout/layout :: header"></header>
+
+	
+	
+	
+	
+<div class="container">
+<div class="card">
+
+
+
+
+
+
+	<div class="row">
+		<div class="col">
+			<p th:text="'Código: ' + ${asignatura.id}"></p>
+		</div>
+		<div class="col">
+			<p  th:text="'Asignatura: ' + ${asignatura.name}"></p>
+		</div>
+		<div class="col">
+			<p  th:text="'Horario: ' + ${asignatura.schedule}"></p>
+		</div>	
+			<div class="col">
+				<p  th:text="'Profesor: ' + ${asignatura.teacher.name } + ' ' + ${asignatura.teacher.lastName }"></p>
+		</div>
+		<div class="col">
+			<p  th:text="'Cupo disponible: ' + ${asignatura.currentQuota}"></p>
+		</div>
+	
+	</div>
+	
+				
+				
+				
+		
+		
+				
+				
+				<div class="row justify-content-center">
+							<div class="col col-md-2">
+								<a class="btn btn-primary" th:href="@{/ingresar/} + ${asignatura.id}">Inscripción</a>
+							
+								
+							</div>
+						</div>
+		
+
+</div>
+</div>
+	<footer th:replace="layout/layout :: footer"></footer>
+
+</body>
+</html>
