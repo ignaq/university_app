@@ -17,6 +17,7 @@ import ar.com.nacho.app.models.entity.Student;
 import ar.com.nacho.app.models.entity.User;
 import ar.com.nacho.app.models.service.ICourseService;
 import ar.com.nacho.app.models.service.IStudentService;
+import ar.com.nacho.app.models.service.IUserService;
 
 @Controller
 public class CourseController {
@@ -29,7 +30,7 @@ public class CourseController {
 	private IStudentService studentService;
 	
 	@Autowired
-	private IUserDao userDao;
+	private IUserService userService;
 	
 	@GetMapping(value= {"/listar" , "/"})
 	public String listSubject(Model model){
@@ -61,7 +62,7 @@ public class CourseController {
 	
 		Course course = courseService.findOne(id);
 		
-		User user = userDao.findByUsername(auth.getName());
+		User user = userService.findByUsername(auth.getName());
 		
 		Student student = studentService.findById(user.getId());
 		
@@ -108,7 +109,7 @@ public class CourseController {
 	@RequestMapping(value="/perfil")
 	public String studentProfile(Map<String, Object> model, Authentication auth) {
 		
-		User user = userDao.findByUsername(auth.getName());
+		User user = userService.findByUsername(auth.getName());
 		
 		
 		model.put("titulo", "Perfil de usuario");
