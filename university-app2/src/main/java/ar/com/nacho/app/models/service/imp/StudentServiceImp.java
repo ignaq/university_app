@@ -1,10 +1,11 @@
-package ar.com.nacho.app.models.service;
+package ar.com.nacho.app.models.service.imp;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ar.com.nacho.app.models.dao.IStudentDao;
 import ar.com.nacho.app.models.entity.Student;
+import ar.com.nacho.app.models.service.IStudentService;
 
 @Service
 public class StudentServiceImp implements IStudentService{

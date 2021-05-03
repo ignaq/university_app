@@ -1,4 +1,4 @@
-package ar.com.nacho.app.models.service;
+package ar.com.nacho.app.models.service.imp;
 
 import java.util.List;
 
@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import ar.com.nacho.app.models.dao.ITeacherDao;
 import ar.com.nacho.app.models.entity.Teacher;
+import ar.com.nacho.app.models.service.ITeacherService;
 
 @Service
 public class TeacherServiceImp implements ITeacherService {
