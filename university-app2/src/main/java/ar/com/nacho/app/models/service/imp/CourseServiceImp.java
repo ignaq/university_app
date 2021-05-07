@@ -40,20 +40,19 @@ public class CourseServiceImp implements ICourseService {
 	@Override
 	@Transactional
 	public List<Course> findByOrderName() {
+		return (List<Course>) courseDao.findAllByOrderByNameAsc();
 		
-		return (List<Course>) courseDao.findAllByOrder();
 	}
 
 	@Override
 	public List<Course> findCoursesByUser(Long id) {
-		
-		return (List<Course>) courseDao.courseByStudent(id);
+		return (List<Course>) courseDao.findAllByStudentsIdEquals(id);
 	}
 
 	@Override
 	public Course findByHours(Long id, String schedule) {
 		
-		return courseDao.courseByHour(id, schedule);
+		return courseDao.findByStudentsIdAndSchedule(id, schedule);
 	}
 
 
