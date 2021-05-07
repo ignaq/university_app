@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import ar.com.nacho.app.models.dao.IUserDao;
+import ar.com.nacho.app.error.NotFoundException;
+
 import ar.com.nacho.app.models.entity.Course;
 import ar.com.nacho.app.models.entity.Student;
 import ar.com.nacho.app.models.entity.User;
@@ -45,7 +46,7 @@ public class CourseController {
 	public String descripcion(@PathVariable(value = "id") Long id, Map<String, Object> model){
 		Course course = courseService.findOne(id);
 		if(course==null){
-			return "redirect:/listar";
+			throw new NotFoundException();
 		}
 		
 		model.put("asignatura", course);

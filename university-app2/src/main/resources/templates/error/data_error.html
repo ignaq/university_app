@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+
+
+<head th:replace="layout/layout :: head"></head>
+
+
+
+
+<body>
+
+	<header th:replace="layout/layout :: header"></header>
+
+	<div class="container">
+
+		<div class="alert alert-danger my-4" role="alert">
+			<h4 class="alert-heading" th:text="${error}"></h4>
+			<h5 class="alert-heading" th:text="${message}"></h5>
+			<h6 class="alert-heading" th:text="${status}"></h6>
+			<h6 class="alert-heading" th:text="${time}"></h6>
+			
+			<hr>
+			<a class="text-secondary mb-0" th:href="@{/}">&laquo; volver</a>
+		</div>
+
+
+
+	</div>
+
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>
