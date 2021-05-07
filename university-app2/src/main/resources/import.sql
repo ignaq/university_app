@@ -30,21 +30,41 @@ INSERT INTO courses (maximum_quota, name, quota, schedule, teacher_id) VALUES ('
 
 
 
+
+
+
+
 /*Users y roles*/
 
 /* alumno = 8878979 - password = 1234 */
 insert into users (dni, legajo, enabled) values ('8878979','$2a$10$S.QKKAEvxBcFTYtko1Dt9.jzjXIKVgr.l06MbDBx4g5i3TqV10/EW',1);
+insert into students (name, last_name, fk_user) values ('Ricardo','Lopez',1);
+
 
 /* admin = admin - password = admin */
 insert into users (dni, legajo, enabled) values ('admin','$2a$10$WNjvCrQNCpim/R/bGWVxw.LOC68JxJQQE64QjoyMtp9mF.NcfdRDG',1);
 
+insert into students (name, last_name, fk_user) values ('El Admin' ,'web', 2);
+
+
+/* admin = admin2 - password = admin */
+insert into users (dni, legajo, enabled) values ('admin2','$2a$10$WNjvCrQNCpim/R/bGWVxw.LOC68JxJQQE64QjoyMtp9mF.NcfdRDG',1);
+
+insert into students (name, last_name, fk_user) values ('admin2' ,'nuevo Admin', 3);
+
+/* alumno = 44223422 - password = 1234 */
+insert into users (dni, legajo, enabled) values ('44223422','$2a$10$S.QKKAEvxBcFTYtko1Dt9.jzjXIKVgr.l06MbDBx4g5i3TqV10/EW',1);
+insert into students (name, last_name, fk_user) values ('Moralez','Patricio',4);
+
+
+
 insert into authorities (user_id, authority) values (1, 'ROLE_USER');
 insert into authorities (user_id, authority) values (2, 'ROLE_ADMIN');
 insert into authorities (user_id, authority) values (2, 'ROLE_USER');
+insert into authorities (user_id, authority) values (3, 'ROLE_ADMIN');
+insert into authorities (user_id, authority) values (3, 'ROLE_USER');
 
-insert into students (id, name, last_name, fk_user) values (1, 'Ricardo','Lopez',1);
-
-insert into students (id, name, last_name, fk_user) values (2, 'El Admin' ,'web', 2);
+insert into authorities (user_id, authority) values (4, 'ROLE_USER');
 
 
 INSERT INTO course_student (course_id, student_id) VALUES ('1', '1');
